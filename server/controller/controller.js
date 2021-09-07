@@ -58,28 +58,77 @@ exports.createParents = (req, res) => {
     }
 
 
-exports.findStudent = (req, res)=>{
+exports.loginStudent = (req, res) =>{
+  if (req.body){
+    const pnr = req.body.pnr;
+    const password = req.body.password;
+    Studentdb.findOne({pnr: pnr, password: password})
+        .then(data =>{
+            if(!data){
+                res.status(404).send({ message : "Not found user with pnr "+ pnr})
+            }else{
+                //res.send(data)
+                res.redirect('/regParents');
+            }
+        })
+        .catch(err =>{
+            res.status(500).send({ message: "Erro retrieving user with pnr " + pnr})
+        })
 
-    if(req.query.pnr){
-        const pnr = req.query.pnr;
-
-        Studentdb.findOne({pnr: pnr})
-            .then(data =>{
-                if(!data){
-                    res.status(404).send({ message : "Not found user with pnr "+ pnr})
-                }else{
-                    res.send(data)
-                }
-            })
-            .catch(err =>{
-                res.status(500).send({ message: "Erro retrieving user with pnr " + pnr})
-            })
-    }
-    else{
-      res.status(400).send({ message : "Content can not be emtpy!"});
-      return;
-    }
+  }else{
+    res.status(400).send({ message : "Content can not be emtpy!"});
+    return;
+  }
 }
+
+
+exports.loginParents = (req, res) =>{
+  if (req.body){
+    const pnr = req.body.pnr;
+    const password = req.body.password;
+    Parentsdb.findOne({pnr: pnr, password: password})
+        .then(data =>{
+            if(!data){
+                res.status(404).send({ message : "Not found user with pnr "+ pnr})
+            }else{
+                //res.send(data)
+                res.redirect('/regParents');
+            }
+        })
+        .catch(err =>{
+            res.status(500).send({ message: "Erro retrieving user with pnr " + pnr})
+        })
+
+  }else{
+    res.status(400).send({ message : "Content can not be empty!"});
+    return;
+  }
+}
+
+
+
+// exports.findStudent = (req, res)=>{
+//
+//     if(req.query.pnr){
+//         const pnr = req.query.pnr;
+//
+//         Studentdb.findOne({pnr: pnr})
+//             .then(data =>{
+//                 if(!data){
+//                     res.status(404).send({ message : "Not found user with pnr "+ pnr})
+//                 }else{
+//                     res.send(data)
+//                 }
+//             })
+//             .catch(err =>{
+//                 res.status(500).send({ message: "Erro retrieving user with pnr " + pnr})
+//             })
+//     }
+//     else{
+//       res.status(400).send({ message : "Content can not be emtpy!"});
+//       return;
+//     }
+// }
 
 exports.findParents = (req, res)=>{
 

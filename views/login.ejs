@@ -6,9 +6,9 @@
   </head>
   <body>
     <h1>Login</h1>
-		<form id="login">
-			<input type="text" autocomplete="off" id="username" placeholder="Username" />
-			<input type="password" autocomplete="off" id="password" placeholder="Password" />
+		<form action = "/api/loginStudent" id="loginStudent" method = "post">
+			<input type="text" autocomplete="off" name="pnr" placeholder="Username" />
+			<input type="password" autocomplete="off" name="password" placeholder="Password" />
 			<input type="submit" value="Submit Form" />
 		</form>
   </body>
