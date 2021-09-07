@@ -1,6 +1,7 @@
+const axios = require('axios');
 
 exports.homeRoutes = (req, res) => {
-    res.render("index");
+      res.render('index');
 }
 exports.regStudent = (req, res)=>{
   res.render("regStudent");

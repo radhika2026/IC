@@ -10,5 +10,6 @@ route.get('/login', services.login);
 
 route.post('/api/student', controller.createStudent);
 route.post('/api/parents', controller.createParents);
-
+route.get('api/findStudent', controller.findStudent);
+route.get('api/findParents', controller.findParents);
 module.exports = route

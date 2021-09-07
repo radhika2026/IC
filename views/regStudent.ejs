@@ -5,10 +5,10 @@
     <title></title>
   </head>
   <body>
-    <form id="reg-form">
-      <input type="text" autocomplete="off" id="username" placeholder="Username" />
-      <input type="password" autocomplete="off" id="password" placeholder="Password" />
-      <input type="text" autocomplete="off" id="PRN" placeholder="PRN number" >
+    <form action = "/api/student" id="regStudent" method = "post">
+      <input type="text" autocomplete="off" name="email" placeholder="Email" />
+      <input type="password" autocomplete="off" name="password" placeholder="Password" />
+      <input type="text" autocomplete="off" name="pnr" placeholder="PRN number" >
       <input type="submit" value="Submit Form" />
     </form>
   </body>
