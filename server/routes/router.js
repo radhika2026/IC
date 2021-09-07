@@ -5,8 +5,8 @@ const controller = require('../controller/controller')
 route.get('/', services.homeRoutes);
 route.get('/regStudent', services.regStudent);
 route.get('/regParents', services.regParents);
-route.get('/login', services.login);
-
+route.get('/loginStudent', services.loginStudent);
+route.get('/loginParents', services.loginParents);
 
 route.post('/api/student', controller.createStudent);
 route.post('/api/parents', controller.createParents);

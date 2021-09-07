@@ -11,6 +11,10 @@ exports.regParents = (req, res)=>{
   res.render("regParents");
 }
 
-exports.login =(req, res)=>{
-  res.render("login");
+exports.loginStudent =(req, res)=>{
+  res.render("loginStudent");
+}
+
+exports.loginParents =(req, res)=>{
+  res.render("loginParents");
 }
