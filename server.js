@@ -10,6 +10,7 @@ dotenv.config( { path : 'config.env'} )
 const PORT = process.env.PORT || 8080;
 const connectDB = require('./server/database/connection');
 
+app.use( express.static( __dirname + "public" ) );
 
 // log requests
 app.use(morgan('tiny'));
